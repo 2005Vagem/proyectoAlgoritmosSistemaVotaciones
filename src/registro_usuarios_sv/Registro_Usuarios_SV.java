@@ -631,8 +631,7 @@ public class Registro_Usuarios_SV {
                break;
                case 3:
                    System.out.println("Bienvenido votante");
-                 
-                   
+              
                break;
                case 4:
                    System.out.println("Bienvenido auditor ");
@@ -787,15 +786,11 @@ public class Registro_Usuarios_SV {
     String linea;
     boolean encontrado=false;
     String correoEleUsuario;
-    String reinicioContraseniaUsuario;
-    String rolUno;
-    String rolDos;
     int opModificacion=0;
     String paisVotante;
     String deptoVotante;
     String muniVotante;
     String direVotante;
-    String nuevoCorreoElectronico;
     String nuevoCorreoEleUsuario;
         
      
@@ -821,7 +816,7 @@ public class Registro_Usuarios_SV {
             
             
          linea = "";
-         System.out.println("Ingrese el correo electronico del usuario que desea modificar para iniciar la busqueda");
+         System.out.println("Ingrese el correo electronico del votante que desea modificar para iniciar la busqueda");
          correoEleUsuario=scan.next();
            System.out.println("Ingrese el pais de residencia del votante");
            paisVotante=scan.next();
@@ -867,7 +862,7 @@ public class Registro_Usuarios_SV {
         linea=String.join("|", lista)+"|";
                            
                          
-        System.out.println("Usuario encontrado, los datos fueron  modificados");
+        System.out.println("Votante encontrado, los datos fueron  modificados");
         encontrado=true;
                            
         }
@@ -880,16 +875,16 @@ public class Registro_Usuarios_SV {
         br.close();
                         
         if (encontrado!=true){
-        System.out.println("Usuario no encontrado, las modificaciones no fueron realizadas");
+        System.out.println("Votante no encontrado, las modificaciones no fueron realizadas");
                                  
         }
                         
         Files.move(fc.toPath(), votantes.toPath(), REPLACE_EXISTING);
             
         }catch (FileNotFoundException ex){
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El votante no existe"+ex);
         } catch (IOException ex) {
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El votante no existe"+ex);
         }     
   
     }
@@ -907,9 +902,9 @@ public class Registro_Usuarios_SV {
             
             
          linea = "";
-         System.out.println("Ingrese el correo electronico del usuario que desea modificar para iniciar la busqueda");
+         System.out.println("Ingrese el correo electronico del votante que desea modificar para iniciar la busqueda");
          correoEleUsuario=scan.next();
-         System.out.println("Ingrese el nuevo correo del usuario");
+         System.out.println("Ingrese el nuevo correo del votante");
           nuevoCorreoEleUsuario = scan.next();
                         
                         
@@ -938,7 +933,7 @@ public class Registro_Usuarios_SV {
         linea=String.join("|", lista)+"|";
                            
                          
-        System.out.println("Usuario encontrado, la contrasenia fue reiniciada");
+        System.out.println("Votante encontrado, la contrasenia fue reiniciada");
         encontrado=true;
                            
         }
@@ -951,16 +946,16 @@ public class Registro_Usuarios_SV {
         br.close();
                         
         if (encontrado!=true){
-        System.out.println("Usuario no encontrado, las modificaciones no fueron realizadas");
+        System.out.println("Votante no encontrado, las modificaciones no fueron realizadas");
                                  
         }
                         
         Files.move(fc.toPath(), votantes.toPath(), REPLACE_EXISTING);
             
         }catch (FileNotFoundException ex){
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El votante no existe"+ex);
         } catch (IOException ex) {
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El Votante no existe"+ex);
         }     
  
     }
@@ -975,23 +970,9 @@ public class Registro_Usuarios_SV {
     boolean encontrado=false;
     String correoEleUsuario;
     String reinicioContraseniaUsuario;
-    String rolUno;
-    String rolDos;
-    int opModificacion=0;
-    String paisVotante;
-    String deptoVotante;
-    String muniVotante;
-    String direVotante;
-    String nuevoCorreoElectronico;
-    String nuevoCorreoEleUsuario;
-        
-     
     
     File votantes= new File("registro_votantes.txt");       
-       
-       
-       
-       
+   
     try {
          FileReader fr = new FileReader(votantes);
                       
@@ -999,9 +980,7 @@ public class Registro_Usuarios_SV {
          File fc = new File("copia_votantes.txt");
          FileWriter fw = new FileWriter(fc);
          BufferedWriter bw = new BufferedWriter(fw);
-                        
-            
-            
+         
          linea = "";
          System.out.println("Ingrese el correo electronico del votante que desea modificar para iniciar la busqueda");
          correoEleUsuario=scan.next();
@@ -1034,7 +1013,7 @@ public class Registro_Usuarios_SV {
         linea=String.join("|", lista)+"|";
                            
                          
-        System.out.println("Usuario encontrado, la contrasenia fue reiniciada");
+        System.out.println("Votante encontrado, la contrasenia fue reiniciada");
         encontrado=true;
                            
         }
@@ -1047,16 +1026,16 @@ public class Registro_Usuarios_SV {
         br.close();
                         
         if (encontrado!=true){
-        System.out.println("Usuario no encontrado, las modificaciones no fueron realizadas");
+        System.out.println("Votante no encontrado, las modificaciones no fueron realizadas");
                                  
         }
                         
         Files.move(fc.toPath(), votantes.toPath(), REPLACE_EXISTING);
             
         }catch (FileNotFoundException ex){
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El Votante no existe"+ex);
         } catch (IOException ex) {
-        System.out.println("El usuario no existe"+ex);
+        System.out.println("El Votante no existe"+ex);
         }     
  
     }
@@ -1111,9 +1090,9 @@ public class Registro_Usuarios_SV {
           } 
                        
           if (encontrado){
-          System.out.println("El usuario ha sido dado de baja correctamente");
+          System.out.println("El Votante ha sido dado de baja correctamente");
           }else{
-          System.out.println("El votante no ha sido dado de baja, porque no existe en el archivo");
+          System.out.println("El Votante no ha sido dado de baja, porque no existe en el archivo");
           }  
        
        
@@ -1126,10 +1105,10 @@ public class Registro_Usuarios_SV {
     int opVotante=0;
     Registro_Usuarios_SV obj= new Registro_Usuarios_SV();
      System.out.println("Bienvenido Registrador de votantes");
-                    System.out.println("1. Agregar Votante");
-                    System.out.println("2. Modificar Votante");
-                    System.out.println("3. Reiniciar Contrasenia del Votante");
-                    System.out.println("4. Registrar fallecimiento de Votante");
+     System.out.println("1. Agregar Votante");
+     System.out.println("2. Modificar Votante");
+     System.out.println("3. Reiniciar Contrasenia del Votante");
+     System.out.println("4. Registrar fallecimiento de Votante");
                    
                  
                     do{
@@ -1141,12 +1120,15 @@ public class Registro_Usuarios_SV {
                         case 1:
                         obj.regVotante();
                         break;
+                        //modificar votante
                         case 2:
                         obj.modifVotante();
                         break;
+                        //nueva contrasenia del votante
                         case 3:
                         obj.nuevaContraseniaVotante();
                         break;
+                        //registrar el fallecimiento del votante
                         case 4:
                         obj.regFallVotante();
                         break;
@@ -1255,7 +1237,6 @@ public class Registro_Usuarios_SV {
     Scanner scan=new Scanner(System.in);
    //variables
    boolean encontrado = false;
-   String correoEleUsuario;
    String  codElecc;
    String fechaInicioE;
    String fechaFinE;
@@ -1272,7 +1253,6 @@ public class Registro_Usuarios_SV {
    String fechas;
     //creacion del archivo
    
-       
          try {
            FileReader fr = new FileReader(elecciones);
            BufferedReader br = new BufferedReader(fr);
@@ -1454,7 +1434,6 @@ public class Registro_Usuarios_SV {
         String experienciaCand;
         String codCand;
         String registro = "";
-        String resultado;
         
         
        //creacion del archivo
@@ -1556,16 +1535,12 @@ public void modificarCandidato(){
     
        // System.out.println(datos[i]);
         lista.add(datos[i]);
-      
-                         
-        } 
-                            
+                    
+        }                    
         //System.out.println("posiciones"+vector.length);
-        
         
         lista.set(0, nombreCand);
        
-     
         //System.out.println(lista);  
                          
         //toma todos los elementos y los une en una cadena utilizando como delimitador la barrita
@@ -1576,7 +1551,6 @@ public void modificarCandidato(){
         encontrado=true;
                            
         }
-                           
                        
         bw.write(linea+"\n");
                            
@@ -1598,8 +1572,6 @@ public void modificarCandidato(){
         }     
         break;
         
-        
-        
         case 2:
             //modificar formacion del candidato
         try {
@@ -1617,9 +1589,7 @@ public void modificarCandidato(){
          scan.nextLine(); // consume the newline
          System.out.println("Ingrese la nueva formacion del candidato");
          formacionCand=scan.nextLine();
-         
-        
-                        
+                      
         ArrayList<String> lista=new ArrayList<String>();
         while((linea = br.readLine()) != null) {
                            
@@ -1632,21 +1602,17 @@ public void modificarCandidato(){
     
        // System.out.println(datos[i]);
         lista.add(datos[i]);
-      
-                         
+                    
         } 
                             
         //System.out.println("posiciones"+vector.length);
         
-        
         lista.set(1, formacionCand);
        
-     
         //System.out.println(lista);  
                          
         //toma todos los elementos y los une en una cadena utilizando como delimitador la barrita
         linea=String.join("|", lista)+"|";
-                           
                          
         System.out.println("Candidato encontrado, los datos fueron  modificados");
         encontrado=true;
@@ -1688,9 +1654,7 @@ public void modificarCandidato(){
          scan.nextLine(); // consume the newline
          System.out.println("Ingrese la nueva experiencia del candidato");
          experienciaCand=scan.nextLine();
-         
-        
-                        
+                      
         ArrayList<String> lista=new ArrayList<String>();
         while((linea = br.readLine()) != null) {
                            
@@ -1703,28 +1667,22 @@ public void modificarCandidato(){
     
        // System.out.println(datos[i]);
         lista.add(datos[i]);
-      
-                         
-        } 
-                            
+                      
+        }                   
         //System.out.println("posiciones"+vector.length);
-        
         
         lista.set(2, experienciaCand);
        
-     
         //System.out.println(lista);  
                          
         //toma todos los elementos y los une en una cadena utilizando como delimitador la barrita
         linea=String.join("|", lista)+"|";
-                           
-                         
+                        
         System.out.println("Candidato encontrado, los datos fueron  modificados");
         encontrado=true;
                            
         }
-                           
-                       
+                      
         bw.write(linea+"\n");
                            
         } 
@@ -1762,9 +1720,7 @@ public void modificarCandidato(){
          scan.nextLine(); // consume the newline
          System.out.println("Ingrese el codigo del candidato");
          newCodCand=scan.nextLine();
-         
-        
-                        
+                      
         ArrayList<String> lista=new ArrayList<String>();
         while((linea = br.readLine()) != null) {
                            
@@ -1777,22 +1733,18 @@ public void modificarCandidato(){
     
        // System.out.println(datos[i]);
         lista.add(datos[i]);
-      
-                         
+                     
         } 
                             
         //System.out.println("posiciones"+vector.length);
         
-        
         lista.set(3, newCodCand);
        
-     
         //System.out.println(lista);  
                          
         //toma todos los elementos y los une en una cadena utilizando como delimitador la barrita
         linea=String.join("|", lista)+"|";
-                           
-                         
+                        
         System.out.println("Candidato encontrado, los datos fueron  modificados");
         encontrado=true;
                            
@@ -1814,8 +1766,7 @@ public void modificarCandidato(){
         System.out.println("El candidato no existe"+ex);
         } catch (IOException ex) {
         System.out.println("El candidato no existe"+ex);
-        }     
-       
+        }  
         break;
         default: System.out.println("Opcion no valida");
   
@@ -1830,7 +1781,6 @@ public void eliminarCandidato(){
  Scanner scan=new Scanner(System.in);
    //variables
    boolean encontrado = false;
-   String correoEleUsuario;
    String codCand;
    
     //creacion del archivo
@@ -1849,9 +1799,7 @@ public void eliminarCandidato(){
            System.out.println("Bienvenido a la eliminacion de candidatos");
            System.out.println("Ingrese el codigo del candidato a eliminar");
            codCand=scan.next();
-                        
-                        
-                        
+                       
            while((linea = br.readLine()) != null) {
            String [] datos = linea.split("\\|");
            if (datos[3].compareTo(codCand) != 0) {
@@ -1897,17 +1845,15 @@ public void eliminarCandidato(){
      op=scan.nextInt();
      switch(op){
          case 1:
-           obj.crearCandiatos();
-             
+         obj.crearCandiatos();   
          break;
          case 2:
-           obj.modificarCandidato();
+         obj.modificarCandidato();
          break;
          case 3:
-            obj.eliminarCandidato();
-            break;
+         obj.eliminarCandidato();
+         break;
          default:System.out.println("Opcion no valida");
-   
      }
    
      }while((op>3)||(op<=0));
@@ -1921,10 +1867,10 @@ public void eliminarCandidato(){
   Registro_Usuarios_SV obj=new Registro_Usuarios_SV();
  int opcAdmon=0;
    System.out.println("Bienvenido Administrador");
-                   System.out.println("1.Acceso a la creacion de usuarios");
-                   System.out.println("2.Acceso a la creacion de votantes");
-                   System.out.println("3.Acceso a las elecciones");
-                   System.out.println("4.Acceso a los reportes");
+   System.out.println("1.Acceso a la creacion de usuarios");
+   System.out.println("2.Acceso a la creacion de votantes");
+   System.out.println("3.Acceso a las elecciones");
+   System.out.println("4.Acceso a los reportes");
                    
                 
                     do{
