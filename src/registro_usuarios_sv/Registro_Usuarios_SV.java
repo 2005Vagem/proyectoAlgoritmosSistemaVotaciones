@@ -1,5 +1,5 @@
 
-//probandoCambios
+//NOTA:EN Registro_Usuarios_SV SE ENCUENTRAN UNIFICADOS TODOS LOS PROYECTOS LLAMADOS BORRADORES.ACÁ SE ENCUENTRA EL PROYECTO DEFINITIVO 
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -215,6 +215,7 @@ public class Registro_Usuarios_SV {
         System.out.println("1. Administrador");
         System.out.println("2. Registrador de votantes");
         System.out.println("3. Auditor");
+        System.out.println("Ingrese opcion:");
         confirmacionrolUsuario=scan.nextInt();
         }while((confirmacionrolUsuario>3)||(confirmacionrolUsuario<=0));
         if(confirmacionrolUsuario==1){
@@ -229,6 +230,7 @@ public class Registro_Usuarios_SV {
         do{System.out.println("Desea tener algun otro rol");
         System.out.println("1. Si");
         System.out.println("2. No");
+        System.out.println("Ingrese opcion:");
         confirmacionAddRol=scan.nextInt();
         }while((confirmacionAddRol>3)||(confirmacionAddRol<=0));
         if (confirmacionAddRol==1){
@@ -245,6 +247,7 @@ public class Registro_Usuarios_SV {
         System.out.println("1. Administrador");
         System.out.println("2. Registrador de votantes");
         }
+        System.out.println("Ingrese opcion:");
         confirmacionrolUsuarioAdd=scan.nextInt();
         }while((confirmacionrolUsuario>3)||(confirmacionrolUsuario<=0));
         if((confirmacionrolUsuario==1)&&(confirmacionrolUsuarioAdd==2)){
@@ -282,6 +285,7 @@ public class Registro_Usuarios_SV {
         //escribe en el archivo lo que tenga asignado la variable registro
         bw.write(registro + "\n");
          bw.close();
+        System.out.println("Usuario creado y registrado!");
                   
         } catch (IOException ex){
         System.out.println(ex);
@@ -365,6 +369,7 @@ public class Registro_Usuarios_SV {
         do{System.out.println("Desea tener algun otro rol nuevo");
         System.out.println("1. Si");
         System.out.println("2. No");
+        System.out.println("Ingrese opcion valida");
         confirmacionAddRol=scan.nextInt();
         }while((confirmacionAddRol>3)||(confirmacionAddRol<=0));
                                 
@@ -382,6 +387,7 @@ public class Registro_Usuarios_SV {
                 System.out.println("1. Administrador");
                 System.out.println("2. Registrador de votantes");
                 }
+                System.out.println("Ingrese opcion valida");
                 confirmacionrolUsuarioAdd=scan.nextInt();
                                  
             }while((confirmacionrolUsuario>3)||(confirmacionrolUsuario<=0));  
@@ -719,37 +725,37 @@ public class Registro_Usuarios_SV {
       Period periodo = Period.between(fechaNac, ahora);
         //numero de años en en el periodo calculado
        int edad = periodo.getYears();
-
+     //se evalua si edad es mayor o igual a 18 para verificar que pueda votar
        if (edad >= 18) {
       System.out.println("El votante es elegible");
        elegible=true;
        rolUsuario="Votante";
        
        //al ser votante elegible se generará la nueva contrasenia
-       //crear arrays que contengan los caracteres para formar las contrasenias
+       //vectores de tipo char que contienen los caracteres para formar las contrasenias
      char[]mayus={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
      char[]minus={'a','b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
      char[]nums={'1','2','3','4','5','6','7','8','9','0'};
      char[]simbolos={'!','*','/','%','$','#'};
-     //se unen los arrays en un objeto de StringBuider y dentro de caracteres se unen todos los arrays
+     //se unen los arrays en un objeto de StringBuider y dentro de caracteres se unen todos los vectores
      StringBuilder caracteres=new StringBuilder();
      //metodo append convierte algo en una cadena
      caracteres.append(mayus);
      caracteres.append(minus);
      caracteres.append(nums);
      caracteres.append(simbolos);
-     //Crear otri String Buider para guardar la contraseña
+     //Crear otro String Buider para guardar la contraseña
       StringBuilder contrasenia=new StringBuilder();
       //for que recorre hasta 16 para que la contrasenia sea de 16 caracteres
       for(int i=0;i<=15;i++){
-        //contar la cantidad de caracteres
+        //cuenta la cantidad de caracteres
         int cantCaracteres=caracteres.length();
         //numero aleatorio entre esa cantidad de caracteres, se aplica la clase math random
         int numeroAleatorio=(int)(Math.random()*cantCaracteres);
         //generar la contraseña, a caracteres se les convierte en un String, y sacar un numero aleatorio según el indice
         contrasenia.append(caracteres.toString().charAt(numeroAleatorio));
       }
-       
+      //contrasenia se convierte en una cadena y se asigna a la variable ContraseiaUsuario
       contraseniaUsuario=contrasenia.toString();
       registro=nombrePUsu+"|"+nombreSUsu+"|"+apellidosPUsuario+"|"+apellidosSUsuario+"|"+cuiUsu+"|"+sexoVotante+"|"+fechaNacVotante+"|"+paisVotante+"|"+deptoVotante+"|"+muniVotante+"|"+direVotante+"|"+correoEleUsuario+"|"+contraseniaUsuario+"|"+rolUsuario+"|";
       System.out.println("La contrasenia del votante es: "+contraseniaUsuario);
@@ -765,6 +771,7 @@ public class Registro_Usuarios_SV {
 
         bw.write(registro + "\n");
          bw.close();
+         System.out.println("Votante registrado");
                   
         } catch (IOException ex){
         System.out.println(ex);
@@ -848,7 +855,7 @@ public class Registro_Usuarios_SV {
                             
         //System.out.println("posiciones"+vector.length);
         
-        
+        //reemplazo de los elementos con el inidice especificado
         lista.set(7, paisVotante);
         lista.set(8,deptoVotante);
         lista.set(9, muniVotante);
@@ -923,6 +930,7 @@ public class Registro_Usuarios_SV {
         } 
                             
         //System.out.println("posiciones"+vector.length);
+        //reemplazo de los datos con el inidice especificado
         lista.set(11, nuevoCorreoEleUsuario);
         //System.out.println(lista);  
                          
@@ -995,7 +1003,7 @@ public class Registro_Usuarios_SV {
             
             
          linea = "";
-         System.out.println("Ingrese el correo electronico del usuario que desea modificar para iniciar la busqueda");
+         System.out.println("Ingrese el correo electronico del votante que desea modificar para iniciar la busqueda");
          correoEleUsuario=scan.next();
          System.out.println("Ingrese la nueva contrasenia, recuerde que debe contener 16 caracteres");
          reinicioContraseniaUsuario = scan.next();
@@ -1012,6 +1020,7 @@ public class Registro_Usuarios_SV {
         for(int i=0; i<datos.length; i++){
     
        // System.out.println(datos[i]);
+       //agrega un elemento en la posicion i del arreglo datos
         lista.add(datos[i]);
       
                          
@@ -1312,6 +1321,7 @@ public class Registro_Usuarios_SV {
                         while((linea = br.readLine()) != null) {
                             String [] datos = linea.split("\\|");
                             if (datos[3].compareTo(codElecc) == 0) {
+                                //se concatena la linea que tiene ese mismo codigo y se le añaden las fechas
                                 linea =linea+fechas+"|";
                                 encontrado=true;
                             }
@@ -1364,19 +1374,19 @@ public class Registro_Usuarios_SV {
         
       String [] datos = linea.split("\\|");
       
-        
+        //convierte el dato que se encuentra en la posicion 4 de datos a la fecha en el formato dd/MM/yyyy
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
         LocalDate fechaInicioElec = LocalDate.parse(datos[4], formatter);
         
-        
+        //convierte el dato que se encuentra en la posicion 6 de datos a la horam en el formato HH:mm
         DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
         LocalTime horaInicioElec = LocalTime.parse(datos[6], formatterHora);
-        
+        //se representa la fecha y la hora
         LocalDateTime inicioEleccion = LocalDateTime.of(fechaInicioElec, horaInicioElec);
 
         
         if(datos[3].equals(codElecc)){
-          
+          //se comprueba si la fecha y hora actual es menor a la fecha y hora que estan en la variable inicioEleccion
           if(LocalDateTime.now().isBefore(inicioEleccion)){
             System.out.println("La eleccion fue eliminada exitosamente");
             eleccionEliminada = true;
