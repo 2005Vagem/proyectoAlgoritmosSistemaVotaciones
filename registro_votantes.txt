@@ -1,0 +1,6 @@
+Mateo|Rafael|Perez|Sol|1234435657554|Masculino|17/08/2000|Guatemala|Guatemala|San Juan Sacatepequez|casa25calle12-aldeax|mateosol@gmail.com|7fV#zKN7JaZer1Rc|Votante|
+Marlen|Andrea|Rivas|Rojas|1234567899876|Femenino|22/02/2005|Guatemala|Peten|Las Flores|Aldea Florecitas 12a calle principal|andrea!123@gmail.com|OIYVhQHf/*vNtc#M|Votante|
+Cayetano|Doroteo|Rojas|Paredes|9876456712341|Masculino|18/02/2001|Guatemala|Guatemala|San Raymundo|caserio abc, calle 12-9|dotori@gmail.com|MsurDHi#ZjcgaTrO|Votante|
+Casimira|Camila|Marquez|Lazoz|567234543098|Femenino|31/01/2004|Izabal|Puerto barrios|Puerto Barrios|puerto calle2-4|camiii@gmail.com|Y82lgn6bHi6d!S/6|Votante|
+Valeria|Melissa|Guzman|Estrada|1267908763671|Femenino|22/02/2005|Guatemala|Guatemala|San Juan Sacatepequez|casita 123, calle abc|valeria123@gmail.com|!W4ScSKaIocqOa/O|Votante|
+Cayetano|Alberto|Perez|Perez|0987654321234|Masculino|05/12/2001|Guatemala|Huehuetenango|xela|calle 25 a la par del parque|cayetanoperez.com|cayetano12345lpoi|Votante|

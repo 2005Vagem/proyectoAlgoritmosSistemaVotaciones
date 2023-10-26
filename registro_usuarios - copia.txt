@@ -1,0 +1,6 @@
+Alba|Beatriz|Guzman|Estrada|alba123e@gmail.com|estrada321!|Registrador de votantes|Auditor|
+Valeria|Melissa|Guzman|Estrada|valeria1234@gmail.com|Mg125*|null|
+Luis|Pedro|Perez|Lopez|perezluis@gmail.com|pp12*|null|
+Moly|Jimena|Jimenez|Sazo|molyy@gmail.com|mj321!|null|
+Maria|Marta|Gonzales|Castanieda|magonz@gmail.com|mar12*|Auditor|
+Marcos|Alfredo|Jimenez|Perez|asgag@gmail.com|alfre345*|Auditor|Administrador|
