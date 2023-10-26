@@ -14,4 +14,4 @@ Rojo|Azul|Naranja|rosado|colores.com|12colores!|Administrador|
 Nicodemo|Quijada|Arenas|Rios|nicorios.com|arenas123*|Administrador|
 Matilde|carrera|lobos|valle|lobos.com|carreraLobos!|Registrador de votantes|Administrador|
 Ruperto|Joaquin|Perez|Estrada|joaquin.com|cambiecontrasenia!|Registrador de votantes|Auditor|
-Carlos|Andree|Perez|Armas|carlos1@gmail.com|cambieContra123*|Registrador de votantes|
+Carlos|Andree|Perez|Armas|carlos1@gmail.com|1234!|Registrador de votantes|

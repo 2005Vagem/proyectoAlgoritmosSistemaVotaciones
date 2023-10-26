@@ -128,7 +128,7 @@ public class Registro_Usuarios_SV {
                      BufferedReader brI = new BufferedReader(frI);
                      
                      String linea = "";
-                     //variable para almacenar la linea que se esta leyendo  
+                     //variable para almacenar la linea que se esta leyendo, al llegar al final del archivo devuelve null  
                      linea = brI.readLine();
                     //verifica que la linea no venga vacia
                     if(linea==null){ System.out.println("Ingrese una contrasenia para el usuario admin:");
@@ -279,7 +279,7 @@ public class Registro_Usuarios_SV {
         FileWriter fw = new FileWriter(usuarios, true);
 
         BufferedWriter bw = new BufferedWriter(fw);
-
+        //escribe en el archivo lo que tenga asignado la variable registro
         bw.write(registro + "\n");
          bw.close();
                   
@@ -412,15 +412,15 @@ public class Registro_Usuarios_SV {
         } else if(confirmacionAddRol==2){
         nueRolExtra=rolUsuario;
         }
-                                
-                                
-                                
+                             
         String nuevoReg=nuevoPNombreUsuario+"|"+nuevoSNombreUsuario+"|"+nuevoPApellidoUsuario+"|"+nuevoSApellidoUsuario+"|"+nuevoCorreoUsuario;
-                                
+        //en cada iteracion se lee una nueva linea, y se asigna a la variable linea, y cuando readLine devuelva null el archivo se termino                        
         while((linea = br.readLine()) != null) {
+        //divide la cadena linea en subcadenas cada vez que encuentra la barrita y almacena estas subcadenas en el array datos   
         String [] datos = linea.split("\\|");
+        //compara si la informacin que esta en el array en la posicion 4, es igual al correoEleUsuario entonces ejecuta lo que está dentro del if
         if (datos[4].compareTo(correoEleUsuario) == 0) {
-                    
+        //se le asigna la informacion que se encuentra en la posicion 5 del vector a la variable nueva contraseniaUsuario            
         nuevaContraseniaUsuario=datos[5];
         String nuevoRegCompleto=nuevoReg+"|"+nuevaContraseniaUsuario+"|"+nueRolExtra+"|";
         linea = nuevoRegCompleto;
@@ -428,11 +428,12 @@ public class Registro_Usuarios_SV {
         encontrado=true;
         }
                               
-                              
+        //escribe en el archivo la cadena que tiene la variable linea                     
         bw.write(linea+"\n");
                             } 
-                        
+        //cierra el flujo de escritura en el archivo                
         bw.close();
+        //cierra el flujo de lectura en el archivo
         br.close();
                             
         if (encontrado!=true){
@@ -441,7 +442,7 @@ public class Registro_Usuarios_SV {
         }
                              
                     
-                             
+        //moviendo el archivo representado por fc al nombre y ubicación representados por el archivo usuarios                     
         Files.move(fc.toPath(), usuarios.toPath(), REPLACE_EXISTING);
         } catch (FileNotFoundException ex){
         System.out.println("El usuario no existe"+ex);
@@ -484,8 +485,9 @@ public class Registro_Usuarios_SV {
                         
            while((linea = br.readLine()) != null) {
            String [] datos = linea.split("\\|");
+           //se comprueba que la posicion 4 del array es diferente a cero y asi se ejecuta el if
            if (datos[4].compareTo(correoEleUsuario) != 0) {
-           bw.write(linea+"\n");
+               bw.write(linea+"\n");
                                 
                                 
              }else{
@@ -513,7 +515,7 @@ public class Registro_Usuarios_SV {
        
    }
    
-   
+   //metodo para reiniciar la contraseña del usuario
    public void reiniciarContrasenia(){
     Scanner scan=new Scanner(System.in);
     //variables
@@ -525,7 +527,7 @@ public class Registro_Usuarios_SV {
     String rolDos;
     
     
-    
+   
     File usuarios= new File("registro_usuarios.txt");   
     try {
          FileReader fr = new FileReader(usuarios);
@@ -543,21 +545,23 @@ public class Registro_Usuarios_SV {
          System.out.println("Ingrese la nueva contrasenia del usuario");
          reinicioContraseniaUsuario = scan.next();
                         
-                        
+        //se crea un arrayList que contiene elementos de tipo String                
         ArrayList<String> lista=new ArrayList<String>();
         while((linea = br.readLine()) != null) {
                            
         String [] datos = linea.split("\\|");
                            
         if (datos[4].compareTo(correoEleUsuario) == 0){
+        //array vector que tiene la misma longitud que el array datos    
         String[] vector=new String[datos.length];
         
         for(int i=0; i<datos.length; i++){
+        //se añade el elemento en la posición i del array datos a la lista lista.
         lista.add(datos[i]);
-                         
         } 
                             
         //System.out.println("posiciones"+vector.length);
+        //reemplaza los datos de la posicion 5 de la lista por el valor de reinicioContraseniaUsuario
         lista.set(5, reinicioContraseniaUsuario);
         //System.out.println(lista);  
                          
@@ -593,6 +597,7 @@ public class Registro_Usuarios_SV {
        
    }
    
+   //metodo para ingresar al sistema eligiendo alguno de los roles
    public void ingresarAlSistema(){
        Scanner scan=new Scanner (System.in);
        int opIngreso=0;
@@ -633,6 +638,7 @@ public class Registro_Usuarios_SV {
        
    }
    
+   //metodo para crear votantes
    public void regVotante(){
         Scanner scan=new Scanner(System.in);
        
@@ -767,7 +773,7 @@ public class Registro_Usuarios_SV {
        
    }
    
-   
+   //metodo para modificar datos de los votantes
    public void modifVotante(){
    Scanner scan=new Scanner(System.in);
     //variables
@@ -953,7 +959,7 @@ public class Registro_Usuarios_SV {
  
    }
   
-   
+   //metodo para crear una nueva contraseña del votante
    public void nuevaContraseniaVotante(){
     Scanner scan=new Scanner(System.in);
     //variables
@@ -1046,7 +1052,7 @@ public class Registro_Usuarios_SV {
  
     }
    
-   
+   //metodo para dar de baja a un votante por motivo de fallecimiento
    public void regFallVotante(){
        
       Scanner scan=new Scanner(System.in);
@@ -1105,7 +1111,7 @@ public class Registro_Usuarios_SV {
        
    }
    
-   
+   //metodo que tiene todas las opciones disponibles de lo que se puede trabajar con un votante
   public void opcionesVotante(){
     Scanner scan=new Scanner(System.in);   
     int opVotante=0;
@@ -1142,6 +1148,7 @@ public class Registro_Usuarios_SV {
             
   }
   
+  //metodo que tiene todas las opciones disponibles de lo que se puede trabajar con un usuario
   public void opcionesUsuario(){
   
     Scanner scan=new Scanner(System.in);
@@ -1184,8 +1191,8 @@ public class Registro_Usuarios_SV {
 
   }
   
-   
-   public String creacionEleccionesSV(){
+   //metodo para crear elecciones
+  public String creacionEleccionesSV(){
        
    
    Scanner scan=new Scanner(System.in);
@@ -1231,8 +1238,9 @@ public class Registro_Usuarios_SV {
    
    return registro;
    }
-   
-  public void configFechasElecc(String registro){
+  
+   //metodo para configurar las fechas de las elecciones ya creadas
+ public void configFechasElecc(String registro){
 
  File elecciones= new File("registro_elecciones.txt");
     Scanner scan=new Scanner(System.in);
@@ -1328,8 +1336,9 @@ public class Registro_Usuarios_SV {
           }
 
 } 
-   
-   public void eliminarElecc(){
+  
+//metodo para eleiminar las elecciones, siempre y cuando no inicien  
+ public void eliminarElecc(){
     
     Scanner scan = new Scanner(System.in);
     
@@ -1394,8 +1403,9 @@ public class Registro_Usuarios_SV {
     }
     
   }
-   
-   public void opElecciones(){
+
+ //metodo con todas las opciones disponibles de lo que se puede realizar con las elecciones
+ public void opElecciones(){
    Scanner scan=new Scanner(System.in);
    Registro_Usuarios_SV obj=new Registro_Usuarios_SV();
     int op=0;
@@ -1420,6 +1430,9 @@ public class Registro_Usuarios_SV {
         }while((op>3)||(op<=0));
    
    }
+
+ 
+//metodo para crear candidatos
  public void crearCandiatos(){
  
    Scanner scan=new Scanner(System.in);
@@ -1474,7 +1487,8 @@ public class Registro_Usuarios_SV {
        }
  
  }
-   
+ 
+ //metodo para modificar datos de los candidatos creados
 public void modificarCandidato(){
   Scanner scan=new Scanner(System.in);
     //variables
@@ -1801,6 +1815,7 @@ public void modificarCandidato(){
 
 }
 
+//metodo para eliminar candidatos que ya se encuentran registrados
 public void eliminarCandidato(){
  Scanner scan=new Scanner(System.in);
    //variables
@@ -1857,6 +1872,7 @@ public void eliminarCandidato(){
 
 }
 
+//metodo con las opciones disponibles a realizar con un candidato
  public void opCandidatos(){
  Scanner scan=new Scanner(System.in);
   Registro_Usuarios_SV obj=new Registro_Usuarios_SV();
@@ -1889,7 +1905,7 @@ public void eliminarCandidato(){
  
  }
 
- 
+//metodo con las opciones disponibles par un administrador
  public void opAdministrador(){
   Scanner scan=new Scanner(System.in);
   Registro_Usuarios_SV obj=new Registro_Usuarios_SV();
