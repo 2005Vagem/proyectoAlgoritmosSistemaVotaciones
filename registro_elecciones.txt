@@ -1,1 +1,2 @@
 Eleccion Presidente|Elegir al presidente de la nacion por el proximo periodo|eleccion 22 departamentos|012023|24/10/2023|30/10/2023|05:00|09:00|25/10/2023|29/10/2023|09:00|05:00|28/10/2023|29/10/2023|07:00|14:00|
+Alcaldes San Juan Sacatepequez|Elegir al nuevo alcalde|Eleccion de alcalde de San Juan Sacatepequez para el proximo periodo|0052023|27/10/2023|30/10/2023|05:00|09:00|25/10/2023|29/10/2023|09:00|05:00|28/10/2023|29/10/2023|07:00|14:00|

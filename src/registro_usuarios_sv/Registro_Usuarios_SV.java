@@ -770,8 +770,7 @@ public class Registro_Usuarios_SV {
 
         bw.write(registro + "\n");
          bw.close();
-         System.out.println("Votante registrado");
-                  
+                 
         } catch (IOException ex){
         System.out.println(ex);
                   
@@ -1104,7 +1103,7 @@ public class Registro_Usuarios_SV {
     Scanner scan=new Scanner(System.in);   
     int opVotante=0;
     Registro_Usuarios_SV obj= new Registro_Usuarios_SV();
-     System.out.println("Bienvenido Registrador de votantes");
+     System.out.println("Bienvenido al Registro de votantes");
      System.out.println("1. Agregar Votante");
      System.out.println("2. Modificar Votante");
      System.out.println("3. Reiniciar Contrasenia del Votante");
@@ -1146,6 +1145,7 @@ public class Registro_Usuarios_SV {
         int opcionIngreso=0;
         Registro_Usuarios_SV obj=new Registro_Usuarios_SV();
         //menú de de opciones de lo que puede hacer el administrador en el registro de usuarios
+        System.out.println("Las opciones disponibles son las siguientes:");
         System.out.println("1. Crear usuario del sistema");
         System.out.println("2. Modificar usuario del sistema");
         System.out.println("3. Deshabilitar usuario del sistema");
@@ -1903,6 +1903,9 @@ public void eliminarCandidato(){
                              break;
                              case 2:
                               obj.opCandidatos();
+                             break;
+                             case 3:
+                             System.out.println("Bienvenido a la configuracion de opciones de Eleccion");
                              break;
                              default: System.out.println("Opcion no valida");
                         

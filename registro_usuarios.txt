@@ -1,5 +1,4 @@
-valeria|melissa|guzman|estrada|valeria123@gmail.com|9876*|Administrador|
-Liios|Max|Perez|Rojas|rojass.com|rro!2|Auditor|
+valeria|melissa|guzman|estrada|valeria123@gmail.com|vale123!|Administrador|
 eulogia|macaria|leon|valle|macava.com|123hola!|Registrador de votantes|Administrador|
 Luis|Fernando|Garcia|Grecia|luis123@gmail.com|luis756*|Administrador|
 Marta|Maria|Perez|Castilla|mapeca@gmail.com|123Castilla!|Registrador de votantes|
@@ -8,10 +7,10 @@ Maroa|Alma|Castillo|Castillo|maria@gmail.com|newww|Registrador de votantes|Audit
 Marisol|Jazmin|Luna|sol|marisol.com|1234*|Registrador de votantes|Auditor|
 karla|Carolina|Montes|Blanco|carla.com|kar!|Registrador de votantes|Auditor|
 Jairo|Lois|Ramirez|Ramas|lois.com|ramas123*|Administrador|Registrador de votantes|
-Enero|Febrero|Marzo|Abril|meses.com|12meses!|Administrador|
 Septiembre|octubre|nomviembre|Diciembre|mesesfinales.con|4!+|Registrador de votantes|Auditor|
 Rojo|Azul|Naranja|rosado|colores.com|12colores!|Administrador|
 Nicodemo|Quijada|Arenas|Rios|nicorios.com|arenas123*|Administrador|
 Matilde|carrera|lobos|valle|lobos.com|carreraLobos!|Registrador de votantes|Administrador|
 Ruperto|Joaquin|Perez|Estrada|joaquin.com|cambiecontrasenia!|Registrador de votantes|Auditor|
 Carlos|Andree|Perez|Armas|carlos1@gmail.com|1234!|Registrador de votantes|
+Karla|Jazmin|Perez|Castillo|karCast@gmail.com|castillo1234!|Registrador de votantes|
